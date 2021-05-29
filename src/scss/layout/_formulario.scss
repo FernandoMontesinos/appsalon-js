@@ -1,0 +1,31 @@
+.formulario{
+    width: 100%;
+}
+
+.campo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    label{
+        flex: 0 0 10rem;
+        color: $blanco;
+    }
+    input{
+        flex: 1; // El flex funciona asi: Por cada pixel que le doy al primero el otro toma lo que le asige por ejemplo: flex: 3, flex: 3 . Mediran igual por que tendran el mismo factor de crecimiento, pero po ejemplo asi: flex: 1 , flex:2 , uno medira el doble del otro segun el espacio que tenga
+        padding: $separacion / 4;
+        border-radius: 1rem;
+        border: none;
+    }
+}
+
+.alerta{
+    padding: $separacion/2;
+    text-align: center;
+    color: $blanco;
+    width: 100%;
+    display: block;
+    
+    &.error{
+        background-color: rgb(194,0,0);
+    }
+}
