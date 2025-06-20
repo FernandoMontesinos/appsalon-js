@@ -1,0 +1,17 @@
+.btn-dark-mode {
+    background: none;
+    border: none;
+    color: $blanco;
+    font-size: 2.4rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+body.light-mode {
+    background-color: $blanco;
+}
+
+body.light-mode p,
+body.light-mode label {
+    color: $negro;
+}
