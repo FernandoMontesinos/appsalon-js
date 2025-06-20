@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function iniciarApp() {
     mostrarServicios();
+    darkMode();
 
     // Resalata el div actual segun el tab al que se presiona
     mostrarSeccion();
@@ -418,4 +419,22 @@ function horaCita() {
             console.log(cita);
         }
     })
+}
+
+function darkMode() {
+    const preferDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const btn = document.querySelector('#dark-mode-btn');
+
+    if (localStorage.getItem('light-mode') === 'true') {
+        document.body.classList.add('light-mode');
+    } else if (localStorage.getItem('light-mode') === 'false') {
+        document.body.classList.remove('light-mode');
+    } else if (!preferDarkScheme.matches) {
+        document.body.classList.add('light-mode');
+    }
+
+    btn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('light-mode', document.body.classList.contains('light-mode'));
+    });
 }
